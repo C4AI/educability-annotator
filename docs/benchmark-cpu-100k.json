@@ -1,0 +1,42 @@
+{
+  "manifest_id": "0c78994d6805a03fe285748ce8d16509ed005331a0f6e6cea432ed4513cbcb43",
+  "tasks": 1,
+  "completed_tasks": 1,
+  "rows": 100000,
+  "chunks": 100000,
+  "tokens": 6400000,
+  "invalid": 0,
+  "read_seconds": 1.6575276789153577,
+  "tokenize_seconds": 5.0850585193766165,
+  "infer_seconds": 425.96419921398774,
+  "write_seconds": 3.65966723918973,
+  "finished": true,
+  "locked": false,
+  "elapsed_seconds": 426.77271229199687,
+  "new_rows": 100000,
+  "rows_per_second": 234.31676187295741,
+  "world_size": 1,
+  "device_type": "cpu",
+  "dtype": "float32",
+  "contract_id": "329e57fcf7fec5777499c12ddb46dc4260187925e0a69c88bac662bd4f574839",
+  "tokens_per_second": 14996.272759869275,
+  "rank_metrics": [
+    {
+      "chunks": 100000,
+      "elapsed_seconds": 426.7714084580002,
+      "invalid": 0,
+      "rank": 0,
+      "rows": 100000,
+      "rows_per_second": 234.31747773665884,
+      "tokens": 6400000
+    }
+  ],
+  "model": ".test-artifacts/published-model",
+  "synthetic_rows": 100000,
+  "words_argument": 16,
+  "input_bytes": 29788890,
+  "peak_rss_mib": 559.28125,
+  "steady_peak_rss_mib": 556.734375,
+  "last_quintile_peak_rss_mib": 541.875,
+  "memory_samples": 7821
+}

@@ -1,0 +1,14 @@
+# Reference versions exercised on macOS ARM64 / Python 3.11.
+# Install the hardware-appropriate PyTorch wheel separately for CUDA deployments.
+torch==2.7.1
+transformers==4.53.3
+tokenizers==0.21.4
+huggingface-hub==0.36.2
+pyarrow==26.0.0
+numpy==2.4.6
+pytest==9.1.1
+psutil==7.2.2
+
+# Optional Hub adapter (installed only with the hub extra).
+datasets==4.4.1
+fsspec==2025.10.0
