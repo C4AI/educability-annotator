@@ -10,7 +10,8 @@ O modelo é um classificador ordinal de educabilidade em português. Seus result
 refletem supervisão sintética; a agregação de chunks implementada aqui não tem uma
 validação pedagógica documental independente.
 
-Na DGX do grupo (Slurm + Docker), veja [docs/dgx.md](docs/dgx.md).
+Na DGX do grupo (Slurm + Docker), e para corpora Parquet grandes com rótulos gravados à parte
+(`python -m educability_annotator.sidecar`), veja [docs/dgx.md](docs/dgx.md).
 
 ## Instalação
 
