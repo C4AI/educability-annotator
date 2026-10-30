@@ -1,0 +1,3 @@
+# Contexto do build: só o que o Dockerfile copia (o código entra por montagem).
+*
+!docker/requirements.gpu.lock

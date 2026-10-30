@@ -10,6 +10,8 @@ O modelo é um classificador ordinal de educabilidade em português. Seus result
 refletem supervisão sintética; a agregação de chunks implementada aqui não tem uma
 validação pedagógica documental independente.
 
+Na DGX do grupo (Slurm + Docker), veja [docs/dgx.md](docs/dgx.md).
+
 ## Instalação
 
 Python **3.11 ou superior**. A validação local usa Python 3.11, macOS ARM64 e CPU.

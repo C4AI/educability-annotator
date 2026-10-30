@@ -8,3 +8,8 @@ dist/
 .DS_Store
 results/
 .test-artifacts/
+
+# Porte para a DGX: instância da configuração, relatórios e logs dos jobs
+config.env
+reports/
+logs/

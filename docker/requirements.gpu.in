@@ -1,0 +1,16 @@
+# Dependências diretas da imagem runtime (docker/Dockerfile). O slurm/00_lock_deps.sbatch resolve
+# daqui o docker/requirements.gpu.lock, com todas as transitivas e hashes; o build instala só o lock.
+# Versões do constraints-tested-cpu.txt, exceto o torch, que vem do índice cu128 (H100 e B200).
+torch @ https://download.pytorch.org/whl/cu128/torch-2.7.1%2Bcu128-cp312-cp312-manylinux_2_28_x86_64.whl#sha256=0b64f7d0a6f2a739ed052ba959f7b67c677028c9566ce51997f9f90fe573ddaa
+transformers==4.53.3
+tokenizers==0.21.4
+huggingface-hub==0.36.2
+pyarrow==26.0.0
+numpy==2.4.6
+# flash-attn é instalado sem dependências (wheel fixada no Dockerfile); esta é a única que ele pede além do torch.
+einops==0.8.1
+# Extra [hub] e testes
+datasets==4.4.1
+fsspec==2025.10.0
+pytest==9.1.1
+psutil==7.2.2
