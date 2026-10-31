@@ -64,7 +64,7 @@ else
     TORCH_THREADS=1
     # Um processo principal por rank; o resto das CPUs vira worker do DataLoader (tokenização).
     WORKERS="${EDU_LOADER_WORKERS:-$(( CPUS / RANKS - 1 ))}"
-    DTYPE="${EDU_DTYPE:-bfloat16}"
+    DTYPE="${EDU_DTYPE:-float16}"
     ATTENTION="${EDU_ATTENTION:-flash_attention_2}"
     GPU_ARGS=(--gpus "\"device=${GPUS}\"")
 fi
@@ -84,11 +84,16 @@ case "${INPUT_KIND}" in
         INPUT_DIR="${CPT_DATA_ROOT}/release/${CPT_VERSION}/kept"
         OUTPUT_DIR="${ANNOTATE_OUTPUT:-${EDU_LABELS_ROOT}/${EDU_MODEL_TAG}${SUFFIX}}"
         ;;
+    dir)
+        # Diretório qualquer com source=<id>/part-*.parquet (doc_uid, text), sem exclusões; exige ANNOTATE_OUTPUT.
+        INPUT_DIR="${ANNOTATE_INPUT_DIR:?defina ANNOTATE_INPUT_DIR}"
+        OUTPUT_DIR="${ANNOTATE_OUTPUT:?defina ANNOTATE_OUTPUT}"
+        ;;
     pilot)
         INPUT_DIR="${EDU_PILOT_ROOT}/sample"
         OUTPUT_DIR="${ANNOTATE_OUTPUT:-${EDU_PILOT_ROOT}/labels/${EDU_MODEL_TAG}${SUFFIX}}"
         ;;
-    *) log "[ERRO] ANNOTATE_INPUT=${INPUT_KIND} (use corpus, kept ou pilot)"; exit 1 ;;
+    *) log "[ERRO] ANNOTATE_INPUT=${INPUT_KIND} (use corpus, kept, dir ou pilot)"; exit 1 ;;
 esac
 # Subconjunto das partes (testes): glob relativo à entrada.
 PATTERN="${EDU_PATTERN:-source=*/part-*.parquet}"
